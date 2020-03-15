@@ -1,5 +1,7 @@
 package alkweb.huawei.swindle.system.entity;
 
+import com.google.common.base.MoreObjects;
+
 import javax.persistence.Column;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -166,5 +168,26 @@ public class BlackListEntity implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("recordId", recordId)
+                .add("areaId", areaId)
+                .add("areaName", areaName)
+                .add("cntyId", cntyId)
+                .add("cntyName", cntyName)
+                .add("chnlId", chnlId)
+                .add("chnlName", chnlName)
+                .add("roamAreaId", roamAreaId)
+                .add("roamAreaName", roamAreaName)
+                .add("valDate", valDate)
+                .add("invalDate", invalDate)
+                .add("staffId", staffId)
+                .add("updateTime", updateTime)
+                .add("status", status)
+                .toString();
     }
 }
