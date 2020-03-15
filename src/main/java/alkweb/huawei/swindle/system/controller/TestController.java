@@ -1,5 +1,6 @@
 package alkweb.huawei.swindle.system.controller;
 
+import alkweb.huawei.swindle.common.annotaion.Log;
 import alkweb.huawei.swindle.common.controller.BaseController;
 import alkweb.huawei.swindle.common.domain.QueryRequest;
 import alkweb.huawei.swindle.system.entity.BlackListEntity;
@@ -26,9 +27,12 @@ public class TestController extends BaseController {
     @Autowired
     private BlackListService blackListService;
 
+    @Log("测试任务")
     @RequestMapping("test")
     @ResponseBody
     public Map<String, Object> jobLogList(QueryRequest request, BlackListEntity entity) {
         return super.selectByPageNumSize(request, () -> this.blackListService.findAllBlackLis(entity));
     }
+
+
 }
